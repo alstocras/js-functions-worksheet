@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS functions worksheet</title>
+</head>
+<body>
+    <h1>Swap Two Numbers</h1>
+    <label for="swapnum0">Enter the first number:</label>
+    <br><br>
+    <input id="swapnum0" type="number">
+    <br><br>
+    <label for="swapnum1">Enter the second number:</label>
+    <br><br>
+    <input id="swapnum1" type="number">
+    <br><br>
+    <button onclick="swap()">Swap</button>
+    <h2 id="swapans">00</h2>
+    <br><br><br>
+    <h1>Total and Percentage Calculator</h1>
+    <p>Input marks in 3 subjects (out of 100):</p>
+    <input type="number" id="subject0">
+    <input type="number" id="subject1">
+    <input type="number" id="subject2">
+    <button onclick="calctotalperc()">Calculate</button>
+    <h2 id="markans">Total: 0/300 | Percentage: 0%</h2>
+    <br><br><br>
+    <h1>Average Speed Calculator (km/h)</h1>
+    <label for="dist">Distance (km)</label>
+    <br><br>
+    <input type="number" id="dist">
+    <br><br>
+    <label for="time">Time (hours)</label>
+    <br><br>
+    <input type="number" id="time">
+    <br><br>
+    <button onclick="speed()">Find Average Speed</button>
+    <h2 id="speedans">Avg. Speed = 0 km/h</h2>
+    <script>
+        const input0 = document.getElementById("swapnum0");
+        const input1 = document.getElementById("swapnum1");
+        const ansTag = document.getElementById("swapans");
+        const subject0 = document.getElementById("subject0");
+        const subject1 = document.getElementById("subject1");
+        const subject2 = document.getElementById("subject2");
+        const totalperc = document.getElementById("markans");
+        const distTag = document.getElementById("dist");
+        const timeTag = document.getElementById("time");
+        const speedTag = document.getElementById("speedans");
+        function swap(){
+            let num0 = input0.value;
+            let num1 = input1.value;
+            ansTag.textContent = num1 + num0;
+        }
+        function calctotalperc(){
+            let num0 = Number(subject0.value);
+            let num1 = Number(subject1.value);
+            let num2 = Number(subject2.value);
+            let total = num0 + num1 + num2;
+            let percentage = (total / 300) * 100;
+            totalperc.textContent = "Total: " + total + "/300 | Percentage: " + percentage + "%";
+        }
+        function speed(){
+            let dist = distTag.value;
+            let time = timeTag.value;
+            let ans = dist / time;
+            speedTag.textContent = "Avg. Speed: " + ans + " km/h"
+        }
+    </script>
+</body>
+</html>
