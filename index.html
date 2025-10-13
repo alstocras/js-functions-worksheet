@@ -38,6 +38,12 @@
     <button onclick="speed()">Find Average Speed</button>
     <h2 id="speedans">Avg. Speed = 0 km/h</h2>
     <br><br><br>
+    <h1>Years to Months and Days Converter</h1>
+    <label for="years">Years:</label>
+    <input id="years" type="number">
+    <button onclick="convert()">Convert</button>
+    <h2 id="yearsresult">Months: 0 | Days: 0</h2>
+    <br><br><br>
     <a href="https://github.com/alstocras/js-functions-worksheet">source code/repository</a>
     <script>
         const input0 = document.getElementById("swapnum0");
@@ -50,6 +56,8 @@
         const distTag = document.getElementById("dist");
         const timeTag = document.getElementById("time");
         const speedTag = document.getElementById("speedans");
+        const yearTag = document.getElementById("years");
+        const yearAnsTag = document.getElementById("yearsresult");
         function swap(){
             let num0 = input0.value;
             let num1 = input1.value;
@@ -68,6 +76,12 @@
             let time = timeTag.value;
             let ans = dist / time;
             speedTag.textContent = "Avg. Speed: " + ans + " km/h"
+        }
+        function convert(){
+            let years = Number(yearTag.value);
+            let months = (years * 12);
+            let days = (years * 365);
+            yearAnsTag.textContent = "Months: " + months + " | " + "Days: " + days;
         }
     </script>
 </body>
